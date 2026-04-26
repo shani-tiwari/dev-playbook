@@ -114,3 +114,34 @@ Reserve space for images:
 CSS Font Adjustment:
 `@font-face { font-family: 'Fallback'; size-adjust: 90%; ascent-override: 80%; descent-override: 20%; }`
 Loading Placeholders: Always ensure your containers have a minimum height (`min-height`) reserved before async data arrives to prevent the "shift" when the data is finally rendered.
+
+
+# INP 
+
+INP (Interaction to Next Paint) is a Core Web Vital metric that measures the latency of all user interactions with a page.
+- What is INP?
+INP is a Core Web Vital that measures a page's overall responsiveness to user interactions. It tracks the time from when a user interacts with a page (e.g., clicks, taps, or key presses) until the next frame is visually updated on the screen. It evaluates the slowest interaction throughout the entire lifecycle of a page.
+
+- How is it Scored?
+- Good: Feedback within 200 milliseconds.
+- Needs Improvement: 200 to 500 milliseconds.
+- Poor: Over 500 milliseconds.
+- Note: Interactions like scrolling, hovering, or pinching to zoom do not count toward INP as they are handled by the browser's compositor thread, not the main thread.
+
+- The Three Phases of INP
+1. Input Delay: The time between the user's action and when the browser can start processing the event handler (often due to the main thread being busy).
+2. Processing Duration: The time taken by the event handlers themselves to execute.
+3. Presentation Delay: The time needed for the browser to calculate styles, perform layout, and paint the next frame.
+
+- Common Causes of Poor INP
+1. Long-running JavaScript tasks that block the main thread.
+2. Heavy or inefficient event handlers.
+3. Excessive DOM size.
+4. Layout thrashing and third-party script overhead.
+
+- How to Optimize INP
+1. Break up long tasks: Use setTimeout or scheduler.yield to return control to the browser.
+2. Update UI first: Prioritize critical visual updates and defer non-essential logic.
+3. Improve code efficiency: Aggressively split code, reduce DOM complexity, and audit third-party scripts.
+4. Use browser tools: Monitor the 'Performance' tab in your browser's Developer Tools to identify slow interactions and bottlenecks.
+
