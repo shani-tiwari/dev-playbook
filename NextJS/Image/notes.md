@@ -1,0 +1,2 @@
+- in local environment Next used an library defaultly that optimizes images -- squoosh
+- but for production we can use l8brary - sharp, that auto optimizes Next Images on build 
