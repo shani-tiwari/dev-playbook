@@ -63,3 +63,4 @@
     }
     ```
     - In this example, when user types in the input field in `Child` component, it calls the `onMessageChange` function passed as a prop from `Parent` component. This function updates the `message` state in `Parent` component, which in turn re-renders `Parent` component and displays the updated message.    
+
