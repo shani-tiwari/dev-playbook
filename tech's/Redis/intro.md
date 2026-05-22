@@ -4,7 +4,7 @@
 - Not a replacement of DB 
 - read query pressure reduced on DB
 - hot data cache - fast response
-
+- stores data only in string format
 
 ## comman use case :
   - OTP 
@@ -14,13 +14,30 @@
   - Temp Data expiary 
   - Shared Counter 
 
+## redis commands: 
+  - TTL     -   gives the time in seconds for which a key-value pair will be stored in redis (time to live)
+  - set     -   can set key value pair in redis, store single variable, can't be updated
+  - get     -   get the key
+  - del     -   delete the key
+  - hset    -   store object, can be updated (in hash)
+  - hgetall -   get entire object
+  - hdel    -   delete object
+  - hget    -   single field
+  - hexist  -   filed available or not
+  - lpush   -   push from left (in queue)
+  - rpop    -   pop from right (in queue)
+  
 
 
 # workflow ( -> = request )
 users -> backend -> redis( <- cache hit / cache miss -> ) -> DataBase
 
 
+## Lists(job) - Queue like
+  - no retry  |  no parallel workers   |  job loss
+
+
 
 
 ## other 
-- some DB can store values in memory   
+- some DB can store values in memory     
