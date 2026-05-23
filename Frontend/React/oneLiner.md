@@ -29,4 +29,17 @@
   ```js
     onClick={handleTurn(i)}
   ```
-* 
+
+
+
+* “Only call Hooks at the top level.”
+  - ✅ Call hooks before conditions
+  - ✅ Call hooks before loops
+  - ✅ Call hooks before nested functions
+  - ❌ Never call hooks inside if, for, while, etc.
+```js (wrong implementation)
+if (showDetails) {
+  const [bio] = useState('React developer from NYC');
+  const [joined] = useState('January 2025');
+}
+```
