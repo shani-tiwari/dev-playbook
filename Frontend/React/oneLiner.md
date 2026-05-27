@@ -43,3 +43,12 @@ if (showDetails) {
   const [joined] = useState('January 2025');
 }
 ```
+
+# createPortal 
+- allows us to render a component 
+outside of the component tree (use case: to avoid clipping 
+if any ancestor)
+  
+  - first argument : jsx 
+  - second argument : node in the dom (where u want to render)
+  ex: document.body, document.getElementById("modal")
