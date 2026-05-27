@@ -52,3 +52,5 @@ if any ancestor)
   - first argument : jsx 
   - second argument : node in the dom (where u want to render)
   ex: document.body, document.getElementById("modal")
+
+- so as we make it sibling of an body tag - which help us on 'Modal' like component where we have to disable bg element access, restrict scroll
