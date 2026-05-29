@@ -118,7 +118,7 @@ Loading Placeholders: Always ensure your containers have a minimum height (`min-
 
 # INP 
 
-INP (Interaction to Next Paint) is a Core Web Vital metric that measures the latency of all user interactions with a page.
+INP (Interaction to Next Paint) - measures the latency of all user interactions with a page.
 - What is INP?
 INP is a Core Web Vital that measures a page's overall responsiveness to user interactions. It tracks the time from when a user interacts with a page (e.g., clicks, taps, or key presses) until the next frame is visually updated on the screen. It evaluates the slowest interaction throughout the entire lifecycle of a page.
 
@@ -126,7 +126,7 @@ INP is a Core Web Vital that measures a page's overall responsiveness to user in
 - Good: Feedback within 200 milliseconds.
 - Needs Improvement: 200 to 500 milliseconds.
 - Poor: Over 500 milliseconds.
-- Note: Interactions like scrolling, hovering, or pinching to zoom do not count toward INP as they are handled by the browser's compositor thread, not the main thread.
+- Note: Interactions like scrolling, hovering, or pinching to zoom do not count toward INP as they are handled by the `browser's compositor thread`, not the main thread.
 
 - The Three Phases of INP
 1. Input Delay: The time between the user's action and when the browser can start processing the event handler (often due to the main thread being busy).
@@ -145,3 +145,18 @@ INP is a Core Web Vital that measures a page's overall responsiveness to user in
 3. Improve code efficiency: Aggressively split code, reduce DOM complexity, and audit third-party scripts.
 4. Use browser tools: Monitor the 'Performance' tab in your browser's Developer Tools to identify slow interactions and bottlenecks.
 
+
+
+# TTFB (time to first byte) (supporting matric)
+* wait, time between hitting enter & receiving very first byte of response, everything else - FCP, LCP, INP - has to wait for it
+* for improvement - backend 
+* slow TTFB - bad FCP, LCP
+
+- Redirect + DNS + TCP + TLS + SERVER = TTFB
+
+* switch to faster DNS provider(cloudflare), use CDN, cache HTML, optimizt DB, server-side rendering
+
+```js
+// For HTML file
+cache-control: public, max-age=60, stale-while-revalidate=86400
+```
