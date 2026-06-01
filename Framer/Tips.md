@@ -31,3 +31,13 @@
 * preference - auto switch to layers panel
 * style > filters>.........
 * Setting > Details page of your `Blog` page -> add your variables for title/desc -> for better SEO
+
+
+# Variants
+* prepare every asset on base variant & by visibility toggles, animate them on variants
+
+
+# new color style with light/dark modes colors
+- use separate variables for dark/light modes
+- Dark/Light Mode toggle - component by framer university
+
