@@ -41,3 +41,9 @@
 - use separate variables for dark/light modes
 - Dark/Light Mode toggle - component by framer university
 
+
+# Text
+- Highlight word & change bg/color specific for the selected character or word
+
+# inline content Editing
+- CMS(direct select & change Data for specific item)

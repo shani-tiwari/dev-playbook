@@ -1,7 +1,20 @@
+# Propeties:
+* Masks
+* Image Filter
+* Blending Modes
+* Gradients (linear/radial/conic)
+* OpenType
+* Overlays
+* truncate
+* Fit Text(font size) 
+* Squircle(in border-radius)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # Components:
 * Smooth scroll - framer university
-
-* style>Masking 
 
 * Click Effect
 
