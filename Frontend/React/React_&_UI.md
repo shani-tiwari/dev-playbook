@@ -64,3 +64,16 @@
     ```
     - In this example, when user types in the input field in `Child` component, it calls the `onMessageChange` function passed as a prop from `Parent` component. This function updates the `message` state in `Parent` component, which in turn re-renders `Parent` component and displays the updated message.    
 
+
+
+# select tag option value
+```js
+    <select onChange={e => setPageSize(Number(e.target.value))}> 
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="10">10</option>
+    </select>
+```
+- in select tag option value is always a string. So, if we are storing in a state which expects a number, we need to convert it to a number.
+
+
