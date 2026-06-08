@@ -47,3 +47,11 @@
 
 # inline content Editing
 - CMS(direct select & change Data for specific item)
+
+
+- Use relevant Media and Text only
+- remove custom cursor on small screen 
+- tap color for mobile
+- lock areas that u won't let touched
+- assign style to all elements - text, color for easy global changes
+- make every value variable in component - for easy changes.
