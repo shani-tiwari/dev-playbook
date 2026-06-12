@@ -14,23 +14,13 @@
 </AuthContext.Provider>
 ```
 
-## UI and Animation (Framer Motion)
-1. `AnimatePresence` + `layout="preserve-aspect-ratio"`: For smooth scaling of text, good for content that changes on some trigger.
-    - As a div scales up, the inside text should also scale up with a smooth transition only.
-    - Otherwise it gets blurred out or distorted in mid transition.
-    - In some cases, adding animation on it or `text-shadow` to make it look crisp will work.
 
-## General JavaScript / UI Tips
-- Event Bubbling: `e.stopPropagation()` stops an event from bubbling up to parent elements.
 
 - Digital Clock Setup:
   1. `Date().toLocaleTimeString()`: Gives full time format. Uses a single timezone and doesn't care about other time zones. Can't change format easily and is heavy in call (searches from a large array every time called).
   2. `padStart(2, '0')`: Make string minimum length 2. If not, add '0' at the start. Useful for formatting hours/minutes/seconds.
   3. Inspect tools: 3 dot menu -> more tools -> sensors (can be used to change device location for testing time zones/geolocation).
 
-- Framer (Design Tool):
-  1. Vector sets: assets -> vector -> new set of vector assets.
-  2. Icons from multiple paths: group them (`ctrl+g`) and tweak properties.
 
 
 ## React parent-child/child-parent communication
@@ -66,14 +56,38 @@
 
 
 
-# select tag option value
+
+
+# stnc/async problen
+- A function that have some sync/async code, and error in sync part of code.
+- Calling it by `await` and that error didn't caught, even if we called it inside `try/catch` 
+- so we should call it like 
 ```js
-    <select onChange={e => setPageSize(Number(e.target.value))}> 
-        <option value="5">5</option>
-        <option value="7">7</option>
-        <option value="10">10</option>
-    </select>
+await Promose.try(getUser); //remove try/catch now
 ```
-- in select tag option value is always a string. So, if we are storing in a state which expects a number, we need to convert it to a number.
+
+
+
+# convert iterable into an array
+- Async Generator function 
+```js 
+async function* asyncGenerator() {
+  await Promise.resolve(1);
+  yield 2;
+  yield 3;
+}
+const asyncIterator = asyncGenerator();
+```
+- use `Array.fromAsync` to convert async iterable into array
+```js
+const result = await Array.fromAsync(asyncIterator);
+console.log(result); // [1, 2, 3]
+```
+
+# Error check
+```js
+if(e instanceof Error)  // check relies on object identity (works in same realm, e.g. iframe vs parent iframe)
+if(Error.isError(error)) // proper realm-agnostic error check (all realm)
+```
 
 

@@ -55,3 +55,6 @@
 - lock areas that u won't let touched
 - assign style to all elements - text, color for easy global changes
 - make every value variable in component - for easy changes.
+
+1. Vector sets: assets -> vector -> new set of vector assets.
+2. Icons from multiple paths: group them (`ctrl+g`) and tweak properties.
