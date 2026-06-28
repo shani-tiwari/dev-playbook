@@ -18,3 +18,12 @@
     /* Your styles */
 `}</style>
 ```
+
+
+- content-visibility: auto; // makes content invisible when scrolled out of view. gives boost to performance. 
+- contain: paint; // tells browser to not paint the content of the element if it is not in view. works with scroll-behavior. 
+
+- you can even use it like this: 
+- contain: paint layout; // tells browser to not paint and layout the content of the element if it is not in view. gives more boost to performance.
+
+- if you are using contain property, then always set size: none; (so that browser does not reserve space for the element)
