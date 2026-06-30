@@ -58,3 +58,13 @@
 
 1. Vector sets: assets -> vector -> new set of vector assets.
 2. Icons from multiple paths: group them (`ctrl+g`) and tweak properties.
+
+# position
+- Sticky only works when all parent have `overflow-visible`.
+- to apply `fixed`, element should be on root level.
+- Accordion - give `h-0` to closed panel and on click on header, change it to `h-fit`
+  with animation
+- use `max-w` to limit width of content.
+- use `sticky` for Navbar with a padding in section equal to Navbar height.
+- if there is an image in the container, give `contain: paint layout` to it to prevent layout shift.
+- if your top pin is activated element will grow to bottom, if bottom active - grow to top.
